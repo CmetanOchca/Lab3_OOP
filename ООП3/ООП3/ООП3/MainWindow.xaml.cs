@@ -37,8 +37,8 @@ namespace ООП3
         {
             DoubleAnimation buttonAnimation = new DoubleAnimation();
             buttonAnimation.From = Holder.ActualWidth;
-            buttonAnimation.To = 50;
-            buttonAnimation.Duration = TimeSpan.FromSeconds(3);
+            buttonAnimation.To = 100;
+            buttonAnimation.Duration = TimeSpan.FromSeconds(0);
             Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
         }
 
