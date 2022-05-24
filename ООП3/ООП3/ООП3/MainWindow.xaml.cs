@@ -9,12 +9,14 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ООП3
 {
+
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -33,12 +35,20 @@ namespace ООП3
 
         private void OnRight(object sender, RoutedEventArgs e)
         {
-            Holder.Margin = "350,69,0,0"
-
+            DoubleAnimation buttonAnimation = new DoubleAnimation();
+            buttonAnimation.From = Holder.ActualWidth;
+            buttonAnimation.To = 50;
+            buttonAnimation.Duration = TimeSpan.FromSeconds(3);
+            Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
         }
 
         private void OnLeft(object sender, RoutedEventArgs e)
         {
+            DoubleAnimation buttonAnimation = new DoubleAnimation();
+            buttonAnimation.From = Holder.ActualWidth;
+            buttonAnimation.To = 50;
+            buttonAnimation.Duration = TimeSpan.FromSeconds(0);
+            Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
 
         }
 

@@ -1,0 +1,16 @@
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.csproj.AssemblyReference.cache
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.csproj.SuggestedBindingRedirects.cache
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\MainWindow.g.cs
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\App.g.cs
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3_MarkupCompile.cache
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3_MarkupCompile.lref
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\bin\Debug\ООП3.exe.config
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\bin\Debug\ООП3.exe
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\bin\Debug\ООП3.pdb
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\MainWindow.baml
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.g.resources
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.Properties.Resources.resources
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.csproj.GenerateResource.cache
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.csproj.CoreCompileInputs.cache
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.exe
+C:\Git\Lab3_OOP\ООП3\ООП3\ООП3\obj\Debug\ООП3.pdb

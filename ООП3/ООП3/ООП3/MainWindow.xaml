@@ -13,11 +13,11 @@
         <Button x:Name="Left" Content="Left" HorizontalAlignment="Left" Height="37" Margin="33,216,0,0" VerticalAlignment="Top" Width="37" Click="OnLeft"/>
         <Button x:Name="Take" Content="Take" HorizontalAlignment="Left" Margin="33,274,0,0" VerticalAlignment="Top" Width="121" Height="37" RenderTransformOrigin="0.509,-0.072" Click="OnTake"/>
         <Rectangle HorizontalAlignment="Left" Height="332" Margin="319,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="15"/>
-        <Rectangle HorizontalAlignment="Left" Height="17" Margin="286,84,0,0" Stroke="Black" VerticalAlignment="Top" Width="283"/>
+        <Rectangle HorizontalAlignment="Left" Height="18" Margin="286,84,0,0" Stroke="Black" VerticalAlignment="Top" Width="283"/>
         <Rectangle HorizontalAlignment="Left" Height="47" Margin="240,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="46" RenderTransformOrigin="0.536,0.478"/>
-        <Grid x:Name="Holder" HorizontalAlignment="Left" Height="249" Margin="350,69,0,0" VerticalAlignment="Top" Width="43">
-            <Rectangle HorizontalAlignment="Left" Height="47" Margin="9,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
-            <Rectangle HorizontalAlignment="Left" Height="137" Margin="17,46,0,0" Stroke="Black" VerticalAlignment="Top" Width="4" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="Holder" HorizontalAlignment="Left" Height="190" Margin="350,69,0,0" VerticalAlignment="Top" Width="28">
+            <Rectangle Height="47" Stroke="Black" Width="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Rectangle Height="137" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="0,46,0,0" HorizontalAlignment="Center">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -27,48 +27,10 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="45" Margin="3,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="4" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="35.179"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="45" Margin="33,176,0,0" Stroke="Black" VerticalAlignment="Top" Width="4" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-39.624"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="36" Margin="0,213,0,0" Stroke="Black" VerticalAlignment="Top" Width="4" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-39.624"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="36" Margin="39,213,0,0" Stroke="Black" VerticalAlignment="Top" Width="4" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="33.351"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
+            <Rectangle Height="8" Stroke="Black" Width="28" VerticalAlignment="Top" Margin="0,182,0,0" HorizontalAlignment="Center"/>
 
         </Grid>
+        <Rectangle x:Name="Cargo" HorizontalAlignment="Left" Height="38" Margin="442,361,0,0" Stroke="Black" VerticalAlignment="Top" Width="44"/>
 
     </Grid>
 </Window>
