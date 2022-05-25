@@ -7,30 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="Up" Content="Up" HorizontalAlignment="Left" Height="37" Margin="75,174,0,0" VerticalAlignment="Top" Width="37" Click="OnUp"/>
-        <Button x:Name="Down" Content="Down" HorizontalAlignment="Left" Height="37" Margin="75,216,0,0" VerticalAlignment="Top" Width="37" Click="OnDown"/>
-        <Button x:Name="Right" Content="Right" HorizontalAlignment="Left" Height="37" Margin="117,216,0,0" VerticalAlignment="Top" Width="37" Click="OnRight"/>
-        <Button x:Name="Left" Content="Left" HorizontalAlignment="Left" Height="37" Margin="33,216,0,0" VerticalAlignment="Top" Width="37" Click="OnLeft"/>
-        <Button x:Name="Take" Content="Take" HorizontalAlignment="Left" Margin="33,274,0,0" VerticalAlignment="Top" Width="121" Height="37" RenderTransformOrigin="0.509,-0.072" Click="OnTake"/>
-        <Rectangle HorizontalAlignment="Left" Height="332" Margin="319,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="15"/>
-        <Rectangle HorizontalAlignment="Left" Height="18" Margin="286,84,0,0" Stroke="Black" VerticalAlignment="Top" Width="283"/>
-        <Rectangle HorizontalAlignment="Left" Height="47" Margin="240,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="46" RenderTransformOrigin="0.536,0.478"/>
-        <Grid x:Name="Holder" HorizontalAlignment="Left" Height="290" Margin="350,69,0,0" VerticalAlignment="Top" Width="28">
-            <Rectangle Height="47" Stroke="Black" Width="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-            <Rectangle Name="Line" Height="137" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="0,46,0,0" HorizontalAlignment="Center">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle Name="Magnet" Height="8" Stroke="Black" Width="28" VerticalAlignment="Top" Margin="0,182,0,0" HorizontalAlignment="Center"/>
+        <Canvas HorizontalAlignment="Center" Height="434" VerticalAlignment="Center" Width="800">
+            <Button x:Name="Up" Content="Up" Height="37" Width="37" Click="OnUp" Canvas.Left="75" Canvas.Top="174"/>
+            <Button x:Name="Down" Content="Down" Height="37" Width="37" Click="OnDown" Canvas.Left="75" Canvas.Top="216"/>
+            <Button x:Name="Right" Content="Right" Height="37" Width="37" Click="OnRight" Canvas.Left="117" Canvas.Top="216"/>
+            <Button x:Name="Left" Content="Left" Height="37" Width="37" Click="OnLeft" Canvas.Left="33" Canvas.Top="216"/>
+            <Button x:Name="Take" Content="Take" Width="121" Height="37" RenderTransformOrigin="0.509,-0.072" Click="OnTake" Canvas.Left="33" Canvas.Top="274"/>
+            <Rectangle Height="332" Stroke="Black" Width="15" Canvas.Left="319" Canvas.Top="67"/>
+            <Rectangle Height="18" Stroke="Black" Width="283" Canvas.Left="286" Canvas.Top="84"/>
+            <Rectangle Height="47" Stroke="Black" Width="46" RenderTransformOrigin="0.536,0.478" Canvas.Left="240" Canvas.Top="69"/>
+            <Grid x:Name="Holder" Height="290" Width="28" Canvas.Left="350" Canvas.Top="69">
+                <Rectangle Height="47" Stroke="Black" Width="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <Rectangle x:Name="Line" Height="137" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="0,46,0,0" HorizontalAlignment="Center">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Magnet" Height="8" Stroke="Black" Width="28" VerticalAlignment="Top" Margin="0,182,0,0" HorizontalAlignment="Center"/>
 
-        </Grid>
-        <Rectangle x:Name="Cargo" HorizontalAlignment="Left" Height="41" Margin="442,358,0,0" Stroke="Black" VerticalAlignment="Top" Width="44"/>
+            </Grid>
+            <Rectangle x:Name="Cargo" Height="41" Stroke="Black" Width="28"  Canvas.Left="350" Canvas.Top="358"/>
+        </Canvas>
 
     </Grid>
 </Window>

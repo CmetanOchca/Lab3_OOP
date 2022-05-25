@@ -22,8 +22,10 @@ namespace ООП3
     public partial class MainWindow : Window
     {
         DoubleAnimation buttonAnimation = new DoubleAnimation();
-        int countPositionX = 0;
-        int countPositionY = 0;
+        private int countPositionX = 0;
+        private int countPositionY = 0;
+        private float speedAnimation = 0.1f;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,13 +38,13 @@ namespace ООП3
                 countPositionY++;
                 buttonAnimation.From = Line.ActualHeight;
                 buttonAnimation.By = -10;
-                buttonAnimation.Duration = TimeSpan.FromSeconds(0);
+                buttonAnimation.Duration = TimeSpan.FromSeconds(speedAnimation);
                 Line.BeginAnimation(Button.HeightProperty, buttonAnimation);
                 ThicknessAnimation thicknessAnimation = new ThicknessAnimation()
                 {
                     From = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top, Magnet.Margin.Right, Magnet.Margin.Bottom),
                     To = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top - 10, Magnet.Margin.Right, Magnet.Margin.Bottom),
-                    Duration = TimeSpan.FromSeconds(0),
+                    Duration = TimeSpan.FromSeconds(speedAnimation),
                 };
                 Magnet.BeginAnimation(MarginProperty, thicknessAnimation);
             }
@@ -51,23 +53,28 @@ namespace ООП3
 
         private void OnRight(object sender, RoutedEventArgs e)
         {
-            if (countPositionX < 10)
+            if (countPositionX < 5)
             {
                 countPositionX++;
-                buttonAnimation.From = Holder.ActualWidth;
-                buttonAnimation.By = 35;
-                buttonAnimation.Duration = TimeSpan.FromSeconds(0);
-                Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
+                //buttonAnimation.From = Holder.ActualWidth;
+                //buttonAnimation.By = 35;
+                //buttonAnimation.Duration = TimeSpan.FromSeconds(speedAnimation);
+                //Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
+                Holder.SetValue(Canvas.LeftProperty, Convert.ToDouble(Holder.GetValue(LeftProperty)) + 35.0);
             }
         }
 
         private void OnLeft(object sender, RoutedEventArgs e)
         {
-            buttonAnimation.From = Holder.ActualWidth;
-            buttonAnimation.By = -35;
-            buttonAnimation.Duration = TimeSpan.FromSeconds(0);
-            Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
-            if (countPositionX>0) { countPositionX--; }
+            if (countPositionX > 0)
+            {
+                countPositionX--;
+                //buttonAnimation.From = Holder.ActualWidth;
+                //buttonAnimation.By = -35;
+                //buttonAnimation.Duration = TimeSpan.FromSeconds(speedAnimation);
+                //Holder.BeginAnimation(Button.WidthProperty, buttonAnimation);
+                Holder.SetValue(Canvas.LeftProperty, Convert.ToDouble(Holder.GetValue(LeftProperty)) - 35.0);
+            }
         }
 
         private void OnDown(object sender, RoutedEventArgs e)
@@ -77,13 +84,13 @@ namespace ООП3
                 countPositionY--;
                 buttonAnimation.From = Line.ActualHeight;
                 buttonAnimation.By = 10;
-                buttonAnimation.Duration = TimeSpan.FromSeconds(0);
+                buttonAnimation.Duration = TimeSpan.FromSeconds(speedAnimation);
                 Line.BeginAnimation(Button.HeightProperty, buttonAnimation);
                 ThicknessAnimation thicknessAnimation = new ThicknessAnimation()
                 {
                     From = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top, Magnet.Margin.Right, Magnet.Margin.Bottom),
                     To = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top + 10, Magnet.Margin.Right, Magnet.Margin.Bottom),
-                    Duration = TimeSpan.FromSeconds(0),
+                    Duration = TimeSpan.FromSeconds(speedAnimation),
                 };
                 Magnet.BeginAnimation(MarginProperty, thicknessAnimation);
             }
