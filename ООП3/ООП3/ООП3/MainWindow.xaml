@@ -16,9 +16,9 @@
             <Rectangle Height="332" Stroke="Black" Width="15" Canvas.Left="319" Canvas.Top="67"/>
             <Rectangle Height="18" Stroke="Black" Width="283" Canvas.Left="286" Canvas.Top="84"/>
             <Rectangle Height="47" Stroke="Black" Width="46" RenderTransformOrigin="0.536,0.478" Canvas.Left="240" Canvas.Top="69"/>
-            <Grid x:Name="Holder" Height="290" Width="28" Canvas.Left="350" Canvas.Top="69">
+            <Grid x:Name="Holder" Height="190" Width="28" Canvas.Left="350" Canvas.Top="69" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Rectangle Height="47" Stroke="Black" Width="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                <Rectangle x:Name="Line" Height="137" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="0,46,0,0" HorizontalAlignment="Center">
+                <Rectangle x:Name="Line" Height="137" MinHeight="37" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,46,0,0">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
