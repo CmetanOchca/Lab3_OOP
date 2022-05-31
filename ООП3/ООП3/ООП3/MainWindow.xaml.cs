@@ -15,81 +15,109 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ООП3
-{ 
+{
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         private int countPositionX = 0;
-        private int countPositionY = 0;
         private float speedAnimation = 0;
         private bool TakeCargo = false;
+        private double MoveX = 35.0;
+        private double MoveY = 10.0;
+        public double HolderX;
+        public double HolderY;
+        public double CargoY;
+        public double MagnetY;
+        public double SliderY;
+        public double BeamX;
+        public double HolderHeight;
+        public double HolderWidth;
+        public double CargoHeight;
+        public double SliderHeight;
+        public double MagnetHeight;
+        public double BeamWidth;
+
 
         public MainWindow()
         {
             InitializeComponent();
+            HolderY = Convert.ToDouble(Holder.GetValue(TopProperty));
+            HolderX = Convert.ToDouble(Holder.GetValue(LeftProperty));
+            CargoY = Convert.ToDouble(Cargo.GetValue(TopProperty));
+            MagnetY = Convert.ToDouble(Magnet.GetValue(TopProperty));
+            SliderY = Convert.ToDouble(Slider.GetValue(TopProperty));
+            BeamX = Convert.ToDouble(Beam.GetValue(LeftProperty));
+            HolderHeight = Convert.ToDouble(Holder.GetValue(HeightProperty));
+            HolderWidth = Convert.ToDouble(Holder.GetValue(WidthProperty));
+            CargoHeight = Convert.ToDouble(Cargo.GetValue(HeightProperty));
+            MagnetHeight = Convert.ToDouble(Magnet.GetValue(HeightProperty));
+            SliderHeight = Convert.ToDouble(Slider.GetValue(HeightProperty));
+            BeamWidth = Convert.ToDouble(Beam.GetValue(WidthProperty));
         }
 
         private void OnUp(object sender, RoutedEventArgs e)
         {
-            if (countPositionY < 10)
+            if ((SliderY + SliderHeight + MagnetHeight) < MagnetY)
             {
-                countPositionY++;
-                Line.SetValue(HeightProperty, Convert.ToDouble(Line.GetValue(HeightProperty)) - 10.0);
-                //ThicknessAnimation thicknessAnimation = new ThicknessAnimation()
-                //{
-                //    From = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top, Magnet.Margin.Right, Magnet.Margin.Bottom),
-                //    To = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top - 10, Magnet.Margin.Right, Magnet.Margin.Bottom),
-                //    Duration = TimeSpan.FromSeconds(speedAnimation),
-                //};
-                //Magnet.BeginAnimation(MarginProperty, thicknessAnimation);
-                if (TakeCargo) Cargo.SetValue(Canvas.TopProperty, Convert.ToDouble(Cargo.GetValue(Canvas.TopProperty)) - 10.0);
+                SliderY = SliderY + MoveY;
+                HolderY = HolderY - MoveY;
+                Line.SetValue(HeightProperty, Convert.ToDouble(Line.GetValue(HeightProperty)) - MoveY);
+                ThicknessAnimation thicknessAnimation = new ThicknessAnimation()
+                {
+                    From = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top, Magnet.Margin.Right, Magnet.Margin.Bottom),
+                    To = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top - MoveY, Magnet.Margin.Right, Magnet.Margin.Bottom),
+                    Duration = TimeSpan.FromSeconds(speedAnimation),
+                };
+                Magnet.BeginAnimation(MarginProperty, thicknessAnimation);
+                if (TakeCargo) Cargo.SetValue(Canvas.TopProperty, Convert.ToDouble(Cargo.GetValue(Canvas.TopProperty)) - MoveY);
             }
         }
 
         private void OnRight(object sender, RoutedEventArgs e)
         {
-            if ((TakeCargo) && (countPositionY == -10)) { }
+            if ((TakeCargo) && ((HolderY + HolderHeight) == (CargoY))) { }
             else
             {
-                if (countPositionX < 5)
+                if ((HolderX + 2*HolderWidth) < (BeamX + BeamWidth))
                 {
-                    countPositionX++;
-                    Holder.SetValue(Canvas.LeftProperty, Convert.ToDouble(Holder.GetValue(LeftProperty)) + 35.0);
-                    if (TakeCargo) Cargo.SetValue(Canvas.LeftProperty, Convert.ToDouble(Cargo.GetValue(Canvas.LeftProperty)) + 35.0);
+                    HolderX = HolderX + MoveX;
+                    Holder.SetValue(Canvas.LeftProperty, Convert.ToDouble(Holder.GetValue(LeftProperty)) + MoveX);
+                    if (TakeCargo) Cargo.SetValue(Canvas.LeftProperty, Convert.ToDouble(Cargo.GetValue(Canvas.LeftProperty)) + MoveX);
                 }
             }
         }
 
         private void OnLeft(object sender, RoutedEventArgs e)
         {
-            if ((TakeCargo) && (countPositionY == -10)) { }
+            if ((TakeCargo) && ((HolderY + HolderHeight) == (CargoY))) { }
             else
             {
-                if (countPositionX > 0)
+                if ((HolderX ) > (BeamX + HolderWidth))
                 {
-                    countPositionX--;
-                    Holder.SetValue(Canvas.LeftProperty, Convert.ToDouble(Holder.GetValue(LeftProperty)) - 35.0);
-                    if (TakeCargo) Cargo.SetValue(Canvas.LeftProperty, Convert.ToDouble(Cargo.GetValue(Canvas.LeftProperty)) - 35.0);
+                    HolderX = HolderX - MoveX;
+                    Holder.SetValue(Canvas.LeftProperty, Convert.ToDouble(Holder.GetValue(LeftProperty)) - MoveX);
+                    if (TakeCargo) Cargo.SetValue(Canvas.LeftProperty, Convert.ToDouble(Cargo.GetValue(Canvas.LeftProperty)) - MoveX);
                 }
             }
         }
 
         private void OnDown(object sender, RoutedEventArgs e)
-        {
-            if (countPositionY > -10)
+        { 
+            if ((HolderY+HolderHeight) != (CargoY))
             {
-                countPositionY--;
-                Line.SetValue(HeightProperty, Convert.ToDouble(Line.GetValue(HeightProperty)) + 10.0);
-                //ThicknessAnimation thicknessAnimation = new ThicknessAnimation()
-                //{
-                //    From = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top, Magnet.Margin.Right, Magnet.Margin.Bottom),
-                //    To = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top + 10, Magnet.Margin.Right, Magnet.Margin.Bottom),
-                //    Duration = TimeSpan.FromSeconds(speedAnimation),
-                //};
-                //Magnet.BeginAnimation(MarginProperty, thicknessAnimation);
-                if (TakeCargo) Cargo.SetValue(Canvas.TopProperty, Convert.ToDouble(Cargo.GetValue(Canvas.TopProperty)) + 10.0);
+                HolderY = HolderY + MoveY;
+                SliderY = SliderY - MoveY;
+                Line.SetValue(HeightProperty, Convert.ToDouble(Line.GetValue(HeightProperty)) + MoveY);
+                ThicknessAnimation thicknessAnimation = new ThicknessAnimation()
+                {
+                    From = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top, Magnet.Margin.Right, Magnet.Margin.Bottom),
+                    To = new Thickness(Magnet.Margin.Left, Magnet.Margin.Top + MoveY, Magnet.Margin.Right, Magnet.Margin.Bottom),
+                    Duration = TimeSpan.FromSeconds(speedAnimation),
+                };
+                Magnet.BeginAnimation(MarginProperty, thicknessAnimation);
+                if (TakeCargo) Cargo.SetValue(Canvas.TopProperty, Convert.ToDouble(Cargo.GetValue(Canvas.TopProperty)) + MoveY);
             }
         }
 
@@ -97,13 +125,13 @@ namespace ООП3
         {
             double HolderX = Convert.ToDouble(Holder.GetValue(LeftProperty));
             double CargoX = Convert.ToDouble(Cargo.GetValue(LeftProperty));
-            if ((HolderX == CargoX) && (countPositionY == -10) && (!TakeCargo))
+            if ((HolderX == CargoX) && ((HolderY + HolderHeight) == (CargoY)) && (!TakeCargo))
             {
                 TakeCargo = true;
                 Take.Background = Brushes.Red;
 
             }
-            else if ((countPositionY == -10) && (TakeCargo)) 
+            else if (((HolderY + HolderHeight) == (CargoY)) && (TakeCargo))
             { 
                 TakeCargo = false; 
                 Take.Background = Brushes.White; 

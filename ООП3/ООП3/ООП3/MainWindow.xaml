@@ -14,11 +14,11 @@
             <Button x:Name="Left" Content="Left" Height="37" Width="37" Click="OnLeft" Canvas.Left="33" Canvas.Top="216"/>
             <Button x:Name="Take" Content="Take" Width="121" Height="37" RenderTransformOrigin="0.509,-0.072" Click="OnTake" Canvas.Left="33" Canvas.Top="274"/>
             <Rectangle Height="332" Stroke="Black" Width="15" Canvas.Left="319" Canvas.Top="67"/>
-            <Rectangle Height="18" Stroke="Black" Width="283" Canvas.Left="286" Canvas.Top="84"/>
+            <Rectangle x:Name="Beam" Height="18" Stroke="Black" Width="236" Canvas.Left="333" Canvas.Top="84" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle Height="47" Stroke="Black" Width="46" RenderTransformOrigin="0.536,0.478" Canvas.Left="240" Canvas.Top="69"/>
-            <Grid x:Name="Holder" Height="190" Width="28" Canvas.Left="350" Canvas.Top="69" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <Rectangle Height="47" Stroke="Black" Width="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                <Rectangle x:Name="Line" Height="137" MinHeight="37" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,46,0,0">
+            <Canvas x:Name="Holder" HorizontalAlignment="Left" Height="191" Canvas.Left="350" Canvas.Top="67" VerticalAlignment="Center" Width="28">
+                <Rectangle x:Name="Slider" Height="44" Stroke="Black" Width="20" Canvas.Left="4" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="3"/>
+                <Rectangle x:Name="Line" Height="138" Stroke="Black" Width="4" RenderTransformOrigin="0.5,0.5" Canvas.Left="12" Canvas.Top="46" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -28,10 +28,14 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <Rectangle x:Name="Magnet" Height="8" Stroke="Black" Width="28" VerticalAlignment="Top" Margin="0,182,0,0" Canvas.Top="69" HorizontalAlignment="Center"/>
-
-            </Grid>
-            <Rectangle x:Name="Cargo" Height="41" Stroke="Black" Width="28"  Canvas.Left="350" Canvas.Top="358"/>
+                <Rectangle x:Name="Magnet" Height="8" Stroke="Black" Width="28" Canvas.Top="183" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </Canvas>
+            <Rectangle x:Name="Cargo" Height="41" Stroke="Black" Width="28"  Canvas.Left="350" HorizontalAlignment="Center" Canvas.Top="358" VerticalAlignment="Top"/>
+            <Rectangle Height="1" Canvas.Left="240" Stroke="Black" Canvas.Top="398" Width="329" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="152" Canvas.Left="490" Stroke="Black" Canvas.Top="247" Width="6" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="152" Canvas.Left="547" Stroke="Black" Canvas.Top="247" Width="6" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="10" Canvas.Left="490" Stroke="Black" Canvas.Top="238" Width="63" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle Height="18" Canvas.Left="285" Stroke="Black" Canvas.Top="84" Width="49" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Canvas>
 
     </Grid>
